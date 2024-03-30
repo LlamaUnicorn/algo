@@ -30,7 +30,7 @@ from collections import Counter
 # print(min(ans1, ans2))
 
 
-# Проверка перестановки
+# 5.5 Проверка перестановки
 # nums = list(map(int, input().split()))
 # nums = [4, 2, 3]
 # cnt = Counter(nums)
@@ -56,3 +56,11 @@ for start in range(n):
             break
 print(ans)
 
+# 6.1 Пара с минимальным произведением
+n = int(input())
+a = list(map(int, input().split()))
+a.sort()
+ans1 = a[0] * a[1]
+ans2 = a[0] * a[-1]
+ans3 = a[-2] * a[-1]
+print(min(ans1, ans2, ans3))
