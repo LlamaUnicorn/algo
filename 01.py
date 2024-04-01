@@ -56,6 +56,7 @@ for start in range(n):
             break
 print(ans)
 
+
 # 6.1 Пара с минимальным произведением
 n = int(input())
 a = list(map(int, input().split()))
@@ -64,3 +65,11 @@ ans1 = a[0] * a[1]
 ans2 = a[0] * a[-1]
 ans3 = a[-2] * a[-1]
 print(min(ans1, ans2, ans3))
+
+
+# 6.2 Тайная жизнь деревьев
+n = int(input())
+a = map(int, input().split())
+b = sorted(a)
+ans = max(cur - i for i, cur in enumerate(b))
+print(ans)
