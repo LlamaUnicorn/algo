@@ -64,3 +64,11 @@ ans1 = a[0] * a[1]
 ans2 = a[0] * a[-1]
 ans3 = a[-2] * a[-1]
 print(min(ans1, ans2, ans3))
+
+
+# 6.2 Подписывание открыток
+a, b = map(int, input().split())
+a //= 10
+b //= 10
+c = (a + b) // 3
+print(min(a, b, c))
