@@ -37,7 +37,7 @@ from collections import Counter
 # ans = (max(nums) == len(nums) and max(cnt.values()) == 1)
 # print('OK' if ans else 'BAD')
 
-# 5.6 Циклы перестановки
+# REPEAT 5.6 Циклы перестановки
 # perm = map(int, input().split())
 perm = [1, 3, 2]
 perm = [x - 1 for x in perm]
@@ -58,8 +58,10 @@ print(ans)
 
 
 # 6.1 Пара с минимальным произведением
-n = int(input())
-a = list(map(int, input().split()))
+# n = int(input())
+# a = list(map(int, input().split()))
+n = 4
+a = [1, 2, 3, 4]
 a.sort()
 ans1 = a[0] * a[1]
 ans2 = a[0] * a[-1]
@@ -67,17 +69,21 @@ ans3 = a[-2] * a[-1]
 print(min(ans1, ans2, ans3))
 
 
-# 6.2 Тайная жизнь деревьев
-n = int(input())
-a = map(int, input().split())
-b = sorted(a)
-ans = max(cur - i for i, cur in enumerate(b))
-print(ans)
+# # 6.2 Тайная жизнь деревьев
+# n = int(input())
+# a = map(int, input().split())
+# b = sorted(a)
+# ans = max(cur - i for i, cur in enumerate(b))
+# print(ans)
+#
+#
+# # 6.3 Подписывание открыток
+# a, b = map(int, input().split())
+# a //= 10
+# b //= 10
+# c = (a + b) // 3
+# print(min(a, b, c))
 
 
-# 6.3 Подписывание открыток
-a, b = map(int, input().split())
-a //= 10
-b //= 10
-c = (a + b) // 3
-print(min(a, b, c))
+
+
