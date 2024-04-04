@@ -39,34 +39,34 @@ from collections import Counter
 
 # REPEAT 5.6 Циклы перестановки
 # perm = map(int, input().split())
-perm = [1, 3, 2]
-perm = [x - 1 for x in perm]
-n = len(perm)
-ans = 0
-visited = [False] * n
-for start in range(n):
-    if visited[start]:
-        continue
-    ans += 1
-    current = start
-    while True:
-        visited[current] = True
-        current = perm[current]
-        if current == start:
-            break
-print(ans)
+# perm = [1, 3, 2]
+# perm = [x - 1 for x in perm]
+# n = len(perm)
+# ans = 0
+# visited = [False] * n
+# for start in range(n):
+#     if visited[start]:
+#         continue
+#     ans += 1
+#     current = start
+#     while True:
+#         visited[current] = True
+#         current = perm[current]
+#         if current == start:
+#             break
+# print(ans)
 
 
 # 6.1 Пара с минимальным произведением
 # n = int(input())
 # a = list(map(int, input().split()))
-n = 4
-a = [1, 2, 3, 4]
-a.sort()
-ans1 = a[0] * a[1]
-ans2 = a[0] * a[-1]
-ans3 = a[-2] * a[-1]
-print(min(ans1, ans2, ans3))
+# n = 4
+# a = [1, 2, 3, 4]
+# a.sort()
+# ans1 = a[0] * a[1]
+# ans2 = a[0] * a[-1]
+# ans3 = a[-2] * a[-1]
+# print(min(ans1, ans2, ans3))
 
 
 # # 6.2 Тайная жизнь деревьев
@@ -83,6 +83,25 @@ print(min(ans1, ans2, ans3))
 # b //= 10
 # c = (a + b) // 3
 # print(min(a, b, c))
+
+
+# 6.4 Исправление перестановки
+# n = int(input())
+# a = list(map(int, input().split()))
+n = 4
+a = [1, 100, 3, 3]
+free = set(range(1, n + 1))
+free -= set(a)
+print(len(free))
+used = set()
+for i in range(n):
+    if a[i] > n or a[i] in used:
+        a[i] = free.pop()
+    used.add(a[i])
+
+
+
+
 
 
 
