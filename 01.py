@@ -86,20 +86,36 @@ from collections import Counter
 
 
 # 6.4 Исправление перестановки
-# n = int(input())
-# a = list(map(int, input().split()))
-n = 4
-a = [1, 100, 3, 3]
-free = set(range(1, n + 1))
-free -= set(a)
-print(len(free))
-used = set()
-for i in range(n):
-    if a[i] > n or a[i] in used:
-        a[i] = free.pop()
-    used.add(a[i])
+# # n = int(input())
+# # a = list(map(int, input().split()))
+# n = 4
+# a = [1, 100, 3, 3]
+# free = set(range(1, n + 1))
+# free -= set(a)
+# print(len(free))
+# used = set()
+# for i in range(n):
+#     if a[i] > n or a[i] in used:
+#         a[i] = free.pop()
+#     used.add(a[i])
 
 
+# 6.5 Минимальный палиндром
+from collections import *
+# s = input()
+s = 'aabbcd'
+cnt = Counter(s)
+half = ''
+mid = ''
+for c in sorted(cnt.keys()):
+    half += c * (cnt[c] // 2)
+    if cnt[c] % 2 and not mid:
+        mid = c
+ans = half + mid + half[::-1]
+print(ans)
+
+
+# 6.6 Исключающее ИЛИ от 1 до n
 
 
 
