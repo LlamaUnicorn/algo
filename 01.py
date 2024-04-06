@@ -116,6 +116,17 @@ print(ans)
 
 
 # 6.6 Исключающее ИЛИ от 1 до n
+n = int(input())
+k = n % 4
+if k == 1:
+    ans = 1
+elif k == 2:
+    ans = n + 1
+elif k == 3:
+    ans = 0
+else:
+    ans = n
+print(ans)
 
 
 
