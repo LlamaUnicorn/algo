@@ -101,33 +101,61 @@ from collections import Counter
 
 
 # 6.5 Минимальный палиндром
-from collections import *
-# s = input()
-s = 'aabbcd'
-cnt = Counter(s)
-half = ''
-mid = ''
-for c in sorted(cnt.keys()):
-    half += c * (cnt[c] // 2)
-    if cnt[c] % 2 and not mid:
-        mid = c
-ans = half + mid + half[::-1]
-print(ans)
+# from collections import *
+# # s = input()
+# s = 'aabbcd'
+# cnt = Counter(s)
+# half = ''
+# mid = ''
+# for c in sorted(cnt.keys()):
+#     half += c * (cnt[c] // 2)
+#     if cnt[c] % 2 and not mid:
+#         mid = c
+# ans = half + mid + half[::-1]
+# print(ans)
 
 
 # 6.6 Исключающее ИЛИ от 1 до n
-n = int(input())
-k = n % 4
-if k == 1:
-    ans = 1
-elif k == 2:
-    ans = n + 1
-elif k == 3:
-    ans = 0
-else:
-    ans = n
-print(ans)
+# n = int(input())
+# k = n % 4
+# if k == 1:
+#     ans = 1
+# elif k == 2:
+#     ans = n + 1
+# elif k == 3:
+#     ans = 0
+# else:
+#     ans = n
+# print(ans)
 
+
+# 6.7 Врачи и посетители
+# import sys
+# n = int(input())
+# a = []
+# for index in range(n):
+#     left, right = input().split()
+#     a.append([int(left), int(right), index])
+# doc_free_time = [0] * 2
+# ans = [None] * n
+# for left, right, index in sorted(a):
+#     for doc in range(2):
+#         if doc_free_time[doc] <= left:
+#             doc_free_time[doc] = right
+#             ans[index] = 'AB'[doc]
+#             break
+#     else:
+#         print('No solution')
+#         sys.exit(0)
+# print(''.join(ans))
+
+# 6.8 Минимизация перепадов
+n = int(input())
+a = map(int, input().split())
+b = list(sorted((h, idx) for idx, h in enumerate(a)))
+ans = b[::2] + b[1::2][::-1]
+ans = list(idx for _, idx in ans)
+print(*ans)
 
 
 
