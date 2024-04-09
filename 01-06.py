@@ -149,15 +149,19 @@ from collections import Counter
 #         sys.exit(0)
 # print(''.join(ans))
 
-# 6.8 Минимизация перепадов
+# # 6.8 Минимизация перепадов
+# n = int(input())
+# a = map(int, input().split())
+# b = list(sorted((h, idx) for idx, h in enumerate(a)))
+# ans = b[::2] + b[1::2][::-1]
+# ans = list(idx for _, idx in ans)
+# print(*ans)
+
+
+# 6.9 Одномерный геометрический центр
 n = int(input())
-a = map(int, input().split())
-b = list(sorted((h, idx) for idx, h in enumerate(a)))
-ans = b[::2] + b[1::2][::-1]
-ans = list(idx for _, idx in ans)
-print(*ans)
-
-
-
+x = map(int, input().split())
+ans = list(sorted(x))[n // 2]
+print(ans)
 
 
