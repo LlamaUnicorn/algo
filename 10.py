@@ -18,3 +18,11 @@ def gcd_iterative(a, b):
 print(gcd(12, 18))
 print(gcd_recursive(12, 18))
 print(gcd_iterative(12, 18))
+
+
+# 10.9 НОД нескольких чисел
+def gcd_list(a):
+    result = 0
+    for item in a:
+        return gcd(result, item)
+    return result
