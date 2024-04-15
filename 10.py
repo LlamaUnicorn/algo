@@ -27,6 +27,26 @@
 #         return gcd(result, item)
 #     return result
 
+
+# 11.2 Парковочные места
+from heapq import *
+n = int(input())
+events = []
+for car in range(n):
+    tadd, tremove = map(int, input().split())
+    events.append((tadd, 0, car))
+    events.append((tremove, 1, car))
+ans = [None] * n
+free_slots = list(range(1, n + 1))
+heapify(free_slots)
+for t, type, car in sorted(events):
+    if type == 0:
+        ans[car] = heappop(free_slots)
+    else:
+        heappush(free_slots, ans[car])
+print(*ans)
+
+
 # 12.3 Объединение отрезков
 # def merge_segm(segms):
 #     res = []
@@ -39,23 +59,23 @@
 
 
 # 12.5 Стрельба по отрезкам
-n = int(input())
-events = []
-for i in range(n):
-    l, r = map(int, input().split())
-    events.append((l, -1, i))
-    events.append((r, +1, i))
-ans = 0
-is_shot = [False] * n
-active = []
-for x, tp, idx in sorted(events):
-    if tp == -1:
-        active.append(idx)
-        continue
-    if is_shot[idx]:
-        continue
-    ans += 1
-    for i in active:
-        is_shot[i] = True
-    active = []
-print(ans)
+# n = int(input())
+# events = []
+# for i in range(n):
+#     l, r = map(int, input().split())
+#     events.append((l, -1, i))
+#     events.append((r, +1, i))
+# ans = 0
+# is_shot = [False] * n
+# active = []
+# for x, tp, idx in sorted(events):
+#     if tp == -1:
+#         active.append(idx)
+#         continue
+#     if is_shot[idx]:
+#         continue
+#     ans += 1
+#     for i in active:
+#         is_shot[i] = True
+#     active = []
+# print(ans)
