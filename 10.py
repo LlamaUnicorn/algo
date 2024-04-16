@@ -30,24 +30,50 @@
 
 # 11.2 Парковочные места
 from heapq import *
-n = int(input())
-events = []
-for car in range(n):
-    tadd, tremove = map(int, input().split())
-    events.append((tadd, 0, car))
-    events.append((tremove, 1, car))
-ans = [None] * n
-free_slots = list(range(1, n + 1))
-heapify(free_slots)
-for t, type, car in sorted(events):
-    if type == 0:
-        ans[car] = heappop(free_slots)
-    else:
-        heappush(free_slots, ans[car])
-print(*ans)
+
+
+# def assign_slots(data):
+#     n = len(data)
+#     events = []
+#     for car in range(n):
+#         tadd, tremove = data[car]
+#         events.append((tadd, 0, car))
+#         events.append((tremove, 1, car))
+#     ans = [None] * n
+#     free_slots = list(range(1, n + 1))
+#     heapify(free_slots)
+#     for t, type, car in sorted(events):
+#         if type == 0:
+#             ans[car] = heappop(free_slots)
+#         else:
+#             heappush(free_slots, ans[car])
+#     return ans
+#
+#
+# data = [(5, 8), (1, 10), (9, 20), (11, 20)]
+# print(assign_slots(data))
+
+
+# from heapq import *
+# n = int(input())
+# events = []
+# for car in range(n):
+#     tadd, tremove = map(int, input().split())
+#     events.append((tadd, 0, car))
+#     events.append((tremove, 1, car))
+# ans = [None] * n
+# free_slots = list(range(1, n + 1))
+# heapify(free_slots)
+# for t, type, car in sorted(events):
+#     if type == 0:
+#         ans[car] = heappop(free_slots)
+#     else:
+#         heappush(free_slots, ans[car])
+# print(*ans)
 
 
 # 12.3 Объединение отрезков
+# 12.4 Часы приема
 # def merge_segm(segms):
 #     res = []
 #     for left, right in sorted(segms):
@@ -56,6 +82,10 @@ print(*ans)
 #         else:
 #             res.append([left, right])
 #     return res
+#
+#
+# data = [(5, 10), (2, 6), (11, 12), (12, 13)]
+# print(merge_segm(data))
 
 
 # 12.5 Стрельба по отрезкам
