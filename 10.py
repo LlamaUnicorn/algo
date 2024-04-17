@@ -109,3 +109,20 @@ from heapq import *
 #         is_shot[i] = True
 #     active = []
 # print(ans)
+
+
+# 12.6 Многослойная покраска
+n, k = map(int, input().split())
+events = []
+for _ in range(n):
+    left, right = map(int, input().split())
+    events.append((left, 1))
+    events.append((right + 1, -1))
+events.sort()
+bal = 0
+ans = 0
+for idx, (x, delta) in enumerate(events):
+    bal += delta
+    if bal >= k:
+        ans += events[idx + 1][0] - x
+print(ans)
