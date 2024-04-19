@@ -16,14 +16,46 @@
 #         ans += 1
 # print(ans)
 
-nums_count, total = 4, 5
-nums = [1, 3, 4, 2]
-nums.sort()  # [1, 2, 3, 4]
-r_idx = nums_count - 1
+# Использование понятных имен переменных улучшает понимание кода.
+# nums_count, total = 4, 5
+# nums = [1, 3, 4, 2]
+# nums.sort()  # [1, 2, 3, 4]
+# r_idx = nums_count - 1
+# ans = 0
+# for num in nums:
+#     while r_idx > 0 and nums[r_idx] > total - num:
+#         r_idx -= 1
+#     if num + nums[r_idx] == total and num < nums[r_idx]:
+#         ans += 1
+# print(ans)
+
+
+# 13.2 Длиннейший подотрезок без повторов
+# n = int(input())
+# a = list(map(int, input().split()))
+# n = 10
+# a = [1, 3, 4, 2, 1, 5, 4, 4, 4, 2]
+# ans = 0
+# j = -1
+# segment = set()
+# for i in range(n):
+#     while (j + 1 < n and a[j + 1] not in segment):
+#         j += 1
+#         segment.add(a[j])
+#     ans = max(ans, j - i + 1)
+#     segment.remove(a[i])
+# print(ans)
+
+nums_count = 10
+nums = [1, 3, 4, 2, 1, 5, 4, 4, 4, 2]
 ans = 0
-for num in nums:
-    while r_idx > 0 and nums[r_idx] > total - num:
-        r_idx -= 1
-    if num + nums[r_idx] == total and num < nums[r_idx]:
-        ans += 1
+j = -1
+segment = set()
+for num in range(nums_count):
+    while (j + 1 < nums_count and nums[j + 1] not in segment):
+        j += 1
+        segment.add(nums[j])
+    ans = max(ans, j - num + 1)
+    segment.remove(nums[num])
 print(ans)
+
