@@ -46,16 +46,35 @@
 #     segment.remove(a[i])
 # print(ans)
 
-nums_count = 10
-nums = [1, 3, 4, 2, 1, 5, 4, 4, 4, 2]
-ans = 0
-j = -1
-segment = set()
-for num in range(nums_count):
-    while (j + 1 < nums_count and nums[j + 1] not in segment):
-        j += 1
-        segment.add(nums[j])
-    ans = max(ans, j - num + 1)
-    segment.remove(nums[num])
-print(ans)
+# nums_count = 10
+# nums = [1, 3, 4, 2, 1, 5, 4, 4, 4, 2]
+# ans = 0
+# j = -1
+# segment = set()
+# for num in range(nums_count):
+#     while (j + 1 < nums_count and nums[j + 1] not in segment):
+#         j += 1
+#         segment.add(nums[j])
+#     ans = max(ans, j - num + 1)
+#     segment.remove(nums[num])
+# print(ans)
 
+# 13.3 Подотрезки со всеми числами
+n, k = map(int, input().split())
+a = list(map(int, input().split()))
+cnt = [0] * (k + 1)
+present = 0
+j = -1
+ans = n
+for i in range(n):
+    while j + 1 < n and present < k:
+        j += 1
+        if not cnt[a[j]]:
+            present += 1
+        cnt[a[j]] += 1
+        if present == k:
+            ans = min(ans, j - i + 1)
+        cnt[a[i]] -= 1
+        if not cnt[a[i]]:
+            present -= 1
+print(ans)
