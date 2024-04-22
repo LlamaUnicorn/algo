@@ -60,21 +60,25 @@
 # print(ans)
 
 # 13.3 Подотрезки со всеми числами
-n, k = map(int, input().split())
-a = list(map(int, input().split()))
-cnt = [0] * (k + 1)
-present = 0
-j = -1
-ans = n
-for i in range(n):
-    while j + 1 < n and present < k:
-        j += 1
-        if not cnt[a[j]]:
-            present += 1
-        cnt[a[j]] += 1
-        if present == k:
-            ans = min(ans, j - i + 1)
-        cnt[a[i]] -= 1
-        if not cnt[a[i]]:
-            present -= 1
-print(ans)
+# n, k = map(int, input().split())
+# a = list(map(int, input().split()))
+# n = 9
+# k = 4
+# a = [1, 2, 1, 3, 1, 2, 1, 4, 1]
+# cnt = [0] * (k + 1)
+# present = 0
+# j = -1
+# ans = n
+# for i in range(n):
+#     while j + 1 < n and present < k:
+#         j += 1
+#         if not cnt[a[j]]:
+#             present += 1
+#         cnt[a[j]] += 1
+#         if present == k:
+#             ans = min(ans, j - i + 1)
+#         cnt[a[i]] -= 1
+#         if not cnt[a[i]]:
+#             present -= 1
+# print(ans)
+
