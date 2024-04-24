@@ -1,18 +1,42 @@
+from utils import timer
+
+
 # 14.3 binary search
-# def bin_search(a, x):
+# @timer
+# def bin_search(array, x):
+#     """
+#     Binary search algorithm
+#
+#     :param array: array
+#     :param x: value we're looking for in an array
+#     :return:
+#     """
 #     left = 0
-#     right = len(a) - 1
+#     right = len(array) - 1
 #     while left < right:
 #         mid = (left + right) // 2
-#         if a[mid] < x:
+#         if array[mid] < x:
 #             left = mid + 1
 #         else:
 #             right = mid
-#         return (left < len(a) and a[left] == x)
+#     return left < len(array) and array[left] == x
 
 
-# print(bin_search([1, 5, 8, 10, 20], 5))
-# print(bin_search([1, 3, 5, 7, 9], 3))
+@timer
+def bin_search(array, x):
+    left = 0
+    right = len(array) - 1
+    while left < right:
+        mid = (left + right) // 2
+        if array[mid] < x:
+            left = mid + 1
+        else:
+            right = mid
+    return left < len(array) and array[left] == x
+
+print(bin_search([1, 5, 10, 10, 19], 5))
+print(bin_search([1, 5, 8, 10, 20], 4))
+
 
 
 # def binary_search(arr, target):
@@ -36,11 +60,11 @@
 # print(binary_search(arr, -1))  # Output: None
 
 # 14.5 Подсчет меньших чисел
-from bisect import *
-n = int(input())
-a = list(map(int, input().split()))
-m = int(input())
-q = map(int, input().split())
-a.sort()
-for query in q:
-    print(bisect_left(a, query), end=" ")
+# from bisect import *
+# n = int(input())
+# a = list(map(int, input().split()))
+# m = int(input())
+# q = map(int, input().split())
+# a.sort()
+# for query in q:
+#     print(bisect_left(a, query), end=" ")
